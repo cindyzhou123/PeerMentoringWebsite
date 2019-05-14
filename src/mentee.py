@@ -1,7 +1,7 @@
 class Mentee(object):
     def __init__(self,zID, group):
         self._zID = zID
-        self._mentor = group
+        self._group = group
     
     @property
     def zID(self):
