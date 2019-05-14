@@ -3,6 +3,7 @@ class Mentee(object):
         self._zID = zID
         self._group = group
         self._tag = 2
+        self._availability = {}
     
     @property
     def zID(self):
@@ -15,3 +16,11 @@ class Mentee(object):
     @property
     def tag(self):
         return self._tag
+
+    @property
+    def availability(self):
+        return self._availability
+    
+    @availability.setter
+    def availability(self, availability):
+        self._availability = availability
