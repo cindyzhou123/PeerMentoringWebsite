@@ -2,6 +2,7 @@ class Mentee(object):
     def __init__(self,zID, group):
         self._zID = zID
         self._group = group
+        self._tag = 2
     
     @property
     def zID(self):
@@ -9,5 +10,8 @@ class Mentee(object):
     
     @property
     def group(self):
-        retuen self._group
-    
+        return self._group
+
+    @property
+    def tag(self):
+        return self._tag

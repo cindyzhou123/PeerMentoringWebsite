@@ -10,4 +10,8 @@ class Mentor(object):
     
     @property
     def group(self):
-        retuen self._group
+        return self._group
+    
+    @property
+    def tag(self):
+        return self._tag
