@@ -1,4 +1,4 @@
-class Mentor(object):
+class Admin(object):
     def __init__(self):
         self._password = "PeerMentoringIsGreat"
         self._tag = 3
