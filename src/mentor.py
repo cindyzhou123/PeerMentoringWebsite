@@ -1,7 +1,8 @@
 class Mentor(object):
     def __init__(self,zID, group):
         self._zID = zID
-        self._mentor = group
+        self._group = group
+        self._tag = 1
     
     @property
     def zID(self):
