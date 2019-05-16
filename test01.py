@@ -74,8 +74,6 @@ def test_create_group(system):
     assert(group2.mentee == [])
     assert(group2.picture == [])
 
-    pass
-
 def test_add_group_to_system(system):
     pass
 
