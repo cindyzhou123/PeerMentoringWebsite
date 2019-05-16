@@ -32,6 +32,23 @@ class Mentee(Users):
     @availability.setter
     def availability(self, availability):
         self._availability = availability
+    
+    def __str__(self):
+        output_string = "Mentee:\n"
+        output_string += "  Tag:"
+        output_string += str(self.tag)
+        output_string += "\n"
+        output_string += "  zID:"
+        output_string += str(self.zID)
+        output_string += "\n"
+        output_string += "  group:"
+        if(self.group == 0):
+            output_string += "UNDEFINED\n"
+        else:
+            output_string += str(self.group)
+        output_string += "\n"
+
+        return output_string
 
 class Mentor(Users):
     def __init__(self,zID):
@@ -41,4 +58,21 @@ class Mentor(Users):
     @property
     def tag(self):
         return self._tag
+    
+     def __str__(self):
+        output_string = "Mentor:\n"
+        output_string += "  Tag:"
+        output_string += str(self.tag)
+        output_string += "\n"
+        output_string += "  zID:"
+        output_string += str(self.zID)
+        output_string += "\n"
+        output_string += "  group:"
+        if(self.group == 0):
+            output_string += "UNDEFINED\n"
+        else:
+            output_string += str(self.group)
+        output_string += "\n"
+
+        return output_string
     
