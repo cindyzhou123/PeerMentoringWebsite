@@ -1,12 +1,16 @@
 class Admin(object):
-    def __init__(self):
-        self._password = "PeerMentoringIsGreat"
-        self._tag = 3
+    def __init__(self, staffID):
+        self._ID = staffID
+        self._key = "originalkey"
     
     @property
-    def password(self):
-        return self._password
+    def ID(self):
+        return self._ID
     
     @property
-    def tag(self):
-        return self._tag
+    def key(self):
+        return self._key
+    
+    @key.setter
+    def key(self, new_key):
+        self._key = new_key
