@@ -62,10 +62,18 @@ class Mentor(Users):
     def __init__(self, zID, name):
         super().__init__(zID, name)
         self._tag = 1
+        self._hours = 0
     
     @property
     def tag(self):
         return self._tag
+
+    @property
+    def hours(self):
+        return self._hours
+
+    def log_hours(self, hours_done):
+        self._hours = self._hours + hours_done    
     
     def __str__(self):
         output_string = "Mentor:\n"
