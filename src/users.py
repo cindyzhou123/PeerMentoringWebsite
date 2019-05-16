@@ -1,7 +1,7 @@
 class Users():
     def __init__(self, zID):
         self._zID = zID
-        self._group = NULL
+        self._groupID = 0
     
     @property
     def zID(self):
@@ -12,14 +12,12 @@ class Users():
         return self._group
     
     @group.setter
-    def group(self, group):
-        self.group = group
-    
+    def group(self, groupID):
+        self.groupID = groupID
 
 class Mentee(Users):
     def __init__(self,zID):
         super().__init__(zID)
-        self._group = NULL
         self._tag = 2
         self._availability = {}
 
@@ -35,11 +33,9 @@ class Mentee(Users):
     def availability(self, availability):
         self._availability = availability
 
-
 class Mentor(Users):
     def __init__(self,zID):
         super().__init__(zID)
-        self._group = NULL
         self._tag = 1
     
     @property
