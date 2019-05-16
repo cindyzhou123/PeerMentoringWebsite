@@ -57,7 +57,6 @@ def test_add_mentor(system):
 
 def test_get_mentor(system):
     mentor = system.get_mentor(5209342)
-
     assert(mentor == system.mentors[0])
 
 def test_create_group(system):
@@ -74,7 +73,12 @@ def test_create_group(system):
     assert(group2.mentee == [])
     assert(group2.picture == [])
 
-def test_add_group_to_system(system):
-    pass
+    system.add_group(group1)
+    system.add_group(group2)
 
-    
+    assert(system.groups[0] == group1)
+    assert(system.groups[1] == group2)
+
+def test_get_group(system):
+    group = system.get_group(1)
+    assert(group == system.groups[0])
