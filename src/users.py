@@ -75,4 +75,3 @@ class Mentor(Users):
         output_string += "\n"
 
         return output_string
-    
