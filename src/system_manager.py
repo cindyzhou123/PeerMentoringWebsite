@@ -31,3 +31,10 @@ class SystemManager(object):
                 return mentor
                 
         return NULL
+    
+    def get_group(self, groupID):
+        for group in self.groups:
+            if(group.groupID == groupID):
+                return group
+        
+        return NULL
