@@ -1,6 +1,6 @@
-from system_manager import SystemManager
-from users import Users, Mentee, Mentor
-from group import Group
+from src.system_manager import SystemManager
+from src.users import Users, Mentee, Mentor
+from src.group import Group
 import pytest
 
 @pytest.fixture
@@ -21,10 +21,14 @@ def test_create_mentee():
     assert(mentee2.zID == 23456)
 
 def test_add_mentor():
+    pass
 
 def test_create_group():
+    pass
 
 def test_add_group_to_system():
+    pass
 
 def test_get_mentor():
+    pass
     

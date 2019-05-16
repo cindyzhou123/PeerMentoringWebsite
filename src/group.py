@@ -1,4 +1,4 @@
-from users import Users, Mentee, Mentor
+from src.users import Users, Mentee, Mentor
 
 class Group(object):
     def __init__(self, groupID, mentor):

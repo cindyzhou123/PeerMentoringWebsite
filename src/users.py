@@ -8,11 +8,11 @@ class Users():
         return self._zID
 
     @property
-    def group(self):
-        return self._group
+    def groupID(self):
+        return self._groupID
     
-    @group.setter
-    def group(self, groupID):
+    @groupID.setter
+    def groupID(self, groupID):
         self.groupID = groupID
 
 class Mentee(Users):
@@ -42,10 +42,10 @@ class Mentee(Users):
         output_string += str(self.zID)
         output_string += "\n"
         output_string += "  group:"
-        if(self.group == 0):
+        if(self.groupID == 0):
             output_string += "UNDEFINED\n"
         else:
-            output_string += str(self.group)
+            output_string += str(self.groupID)
         output_string += "\n"
 
         return output_string
@@ -59,7 +59,7 @@ class Mentor(Users):
     def tag(self):
         return self._tag
     
-     def __str__(self):
+    def __str__(self):
         output_string = "Mentor:\n"
         output_string += "  Tag:"
         output_string += str(self.tag)
@@ -68,10 +68,10 @@ class Mentor(Users):
         output_string += str(self.zID)
         output_string += "\n"
         output_string += "  group:"
-        if(self.group == 0):
+        if(self.groupID == 0):
             output_string += "UNDEFINED\n"
         else:
-            output_string += str(self.group)
+            output_string += str(self.groupID)
         output_string += "\n"
 
         return output_string
