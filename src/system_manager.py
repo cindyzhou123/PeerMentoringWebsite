@@ -24,3 +24,10 @@ class SystemManager(object):
     
     def add_mentor(self, mentor):
         self.mentors.append(mentor)
+    
+    def get_mentor(self, zID):
+        for mentor in self.mentors:
+            if(mentor.zID == zID):
+                return mentor
+                
+        return NULL 
