@@ -1,13 +1,15 @@
+from users import Users, Mentee, Mentor
+
 class Group(object):
-    def __init__(self, group_num, mentor):
-        self._group_num = group_num
+    def __init__(self, groupID, mentor):
+        self._groupID = groupID
         self._mentor = mentor
         self._mentee = []
         self._picture = []
 
     @property
-    def group_num(self):
-        return self._group_num
+    def groupID(self):
+        return self._groupID
     
     @property
     def mentor(self):
