@@ -29,8 +29,8 @@ class Group(object):
         return self._name
     
     @name.setter
-    def name(self, name):
-        self.name = name
+    def name(self, new_name):
+        self._name = new_name
 
     def add_mentee(self, mentee):
         self.mentee.append(mentee)

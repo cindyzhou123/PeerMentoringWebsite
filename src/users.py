@@ -13,8 +13,8 @@ class Users():
         return self._groupID
     
     @groupID.setter
-    def groupID(self, groupID):
-        self.groupID = groupID
+    def groupID(self, new_groupID):
+        self._groupID = new_groupID
     
     @property
     def name(self):
@@ -35,8 +35,8 @@ class Mentee(Users):
         return self._availability
     
     @availability.setter
-    def availability(self, availability):
-        self._availability = availability
+    def availability(self, new_availability):
+        self._availability = new_availability
     
     def __str__(self):
         output_string = "Mentee:\n"
