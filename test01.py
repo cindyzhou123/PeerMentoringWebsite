@@ -20,8 +20,8 @@ def system():
     return system
 
 def test_add_mentee(system):
-    mentee1 = Mentee(12345)
-    mentee2 = Mentee(23456)
+    mentee1 = Mentee(12345, "Allen")
+    mentee2 = Mentee(23456, "May")
     
     assert(mentee1.tag == 2)
     assert(mentee2.tag == 2)
@@ -29,35 +29,39 @@ def test_add_mentee(system):
     assert(mentee2.zID == 23456)
     assert(mentee1.groupID == 0)
     assert(mentee2.groupID == 0)
+    assert(mentee1.name == "Allen")
+    assert(mentee2.name == "May")
 
     system.add_mentee(mentee1)
     system.add_mentee(mentee2)
 
-    assert(system.mentees[0] == mentee1)
-    assert(system.mentees[1] == mentee2)
+    assert(system.mentees[0].name == "Allen")
+    assert(system.mentees[1].zID == 23456)
 
 def test_add_mentor(system):
 
-    mentor1 = Mentor(5209342)
-    mentor2 = Mentor(2938492)
+    mentor1 = Mentor(5209342, "Cindy")
+    mentor2 = Mentor(2938492, "Jason")
 
     assert(mentor1.tag == 1)
     assert(mentor1.zID == 5209342)
     assert(mentor1.groupID == 0)
+    assert(mentor1.name == "Cindy")
 
     assert(mentor2.tag == 1)
     assert(mentor2.zID == 2938492)
     assert(mentor2.groupID == 0)
+    assert(mentor2.name == "Jason")
 
     system.add_mentor(mentor1)
     system.add_mentor(mentor2)
 
-    assert(system.mentors[0] == mentor1)
-    assert(system.mentors[1] == mentor2)
+    assert(system.mentors[0].zID == 5209342)
+    assert(system.mentors[1].name == "Jason")
 
 def test_get_mentor(system):
     mentor = system.get_mentor(5209342)
-    assert(mentor == system.mentors[0])
+    assert(mentor.name == "Cindy")
 
 def test_create_group(system):
     group1 = Group(groupid_generator.next(), system.get_mentor(5209342))
@@ -67,18 +71,28 @@ def test_create_group(system):
     assert(group1.mentor == system.mentors[0])
     assert(group1.mentee == [])
     assert(group1.picture == [])
+    assert(group1.name == "Please give me a name")
 
     assert(group2.groupID == 2)
     assert(group2.mentor == system.mentors[1])
     assert(group2.mentee == [])
     assert(group2.picture == [])
+    assert(group2.name == "Please give me a name")
 
     system.add_group(group1)
     system.add_group(group2)
 
-    assert(system.groups[0] == group1)
-    assert(system.groups[1] == group2)
+    group1.name = "R2D2"
+    group2.name = "Woolies rules"
+
+    assert(system.groups[0].name == "R2D2")
+    assert(system.groups[1].groupID == 2)
 
 def test_get_group(system):
     group = system.get_group(1)
-    assert(group == system.groups[0])
+    assert(group.name == "R2D2")
+
+def test_mentee_to_group(system):
+    group = system.get_group(2)
+    group.add_mentee(system.mentees[0])
+    pass
