@@ -1,7 +1,8 @@
 class Users():
-    def __init__(self, zID):
+    def __init__(self, zID, name):
         self._zID = zID
         self._groupID = 0
+        self._name = name
     
     @property
     def zID(self):
@@ -14,10 +15,14 @@ class Users():
     @groupID.setter
     def groupID(self, groupID):
         self.groupID = groupID
+    
+    @property
+    def name(self):
+        return self._name
 
 class Mentee(Users):
-    def __init__(self,zID):
-        super().__init__(zID)
+    def __init__(self, zID, name):
+        super().__init__(zID, name)
         self._tag = 2
         self._availability = {}
 
@@ -41,9 +46,12 @@ class Mentee(Users):
         output_string += "  zID:"
         output_string += str(self.zID)
         output_string += "\n"
-        output_string += "  group:"
+        output_string += "  Name:"
+        output_string += str(self.name)
+        output_string += "\n"
+        output_string += "  Group:"
         if(self.groupID == 0):
-            output_string += "UNDEFINED\n"
+            output_string += "UNDEFINED"
         else:
             output_string += str(self.groupID)
         output_string += "\n"
@@ -51,8 +59,8 @@ class Mentee(Users):
         return output_string
 
 class Mentor(Users):
-    def __init__(self,zID):
-        super().__init__(zID)
+    def __init__(self, zID, name):
+        super().__init__(zID, name)
         self._tag = 1
     
     @property
@@ -67,9 +75,12 @@ class Mentor(Users):
         output_string += "  zID:"
         output_string += str(self.zID)
         output_string += "\n"
-        output_string += "  group:"
+        output_string += "  Name:"
+        output_string += str(self.name)
+        output_string += "\n"
+        output_string += "  Group:"
         if(self.groupID == 0):
-            output_string += "UNDEFINED\n"
+            output_string += "UNDEFINED"
         else:
             output_string += str(self.groupID)
         output_string += "\n"
