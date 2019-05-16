@@ -34,6 +34,7 @@ class Group(object):
 
     def add_mentee(self, mentee):
         self.mentee.append(mentee)
+        mentee.groupID = self.groupID
     
     def add_picture(self, picture):
         self.picture.append(picture)

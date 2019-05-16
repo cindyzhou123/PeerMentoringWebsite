@@ -59,13 +59,20 @@ def test_add_mentor(system):
     assert(system.mentors[0].zID == 5209342)
     assert(system.mentors[1].name == "Jason")
 
-def test_get_mentor(system):
-    mentor = system.get_mentor(5209342)
-    assert(mentor.name == "Cindy")
+def test_get_user(system):
+    mentor1 = system.get_mentor_by_ID(5209342)
+    assert(mentor1.name == "Cindy")
+    mentor2 = system.get_mentor_by_name("Jason")
+    assert(mentor2.zID == 2938492)
+
+    mentee1 = system.get_mentee_by_ID(12345)
+    assert(mentee1.name == "Allen")
+    mentee2 = system.get_mentee_by_name("May")
+    assert(mentee2.zID == 23456)
 
 def test_create_group(system):
-    group1 = Group(groupid_generator.next(), system.get_mentor(5209342))
-    group2 = Group(groupid_generator.next(), system.get_mentor(2938492))
+    group1 = Group(groupid_generator.next(), system.get_mentor_by_name("Cindy"))
+    group2 = Group(groupid_generator.next(), system.get_mentor_by_ID(2938492))
 
     assert(group1.groupID == 1)
     assert(group1.mentor == system.mentors[0])
@@ -89,10 +96,15 @@ def test_create_group(system):
     assert(system.groups[1].groupID == 2)
 
 def test_get_group(system):
-    group = system.get_group(1)
-    assert(group.name == "R2D2")
+    group1 = system.get_group_by_ID(1)
+    assert(group1.name == "R2D2")
+    group2 = system.get_group_by_name("Woolies rules")
+    assert(group2.groupID == 2)
 
 def test_mentee_to_group(system):
-    group = system.get_group(2)
-    group.add_mentee(system.mentees[0])
-    pass
+    group = system.get_group_by_ID(2)
+    group.add_mentee(system.get_mentee_by_name("Allen"))
+    group.add_mentee(system.get_mentee_by_ID(23456))
+
+    assert(system.mentees[0].groupID == 2)
+    assert(system.mentees[1].groupID == 2)
