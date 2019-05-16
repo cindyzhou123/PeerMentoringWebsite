@@ -6,6 +6,7 @@ class Group(object):
         self._mentor = mentor
         self._mentee = []
         self._picture = []
+        self._name = "Please give me a name"
 
     @property
     def groupID(self):
@@ -22,6 +23,14 @@ class Group(object):
     @property
     def picture(self):
         return self._picture
+    
+    @property
+    def name(self):
+        return self._name
+    
+    @name.setter
+    def name(self, name):
+        self.name = name
 
     def add_mentee(self, mentee):
         self.mentee.append(mentee)
