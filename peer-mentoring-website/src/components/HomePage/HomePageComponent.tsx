@@ -1,0 +1,2 @@
+import HeadingComponent from "../HeadingComponent";
+
