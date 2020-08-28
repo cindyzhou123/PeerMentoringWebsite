@@ -13,7 +13,8 @@ Schedule of development:
 
 Technologies:
 ReactJS with TypeScript
-
+Material-UI
+font from: https://github.com/fontsource/fontsource
 
 Created by Zixin Zhou (Cindy)
 Starting Date: 25/05/2020
