@@ -11,8 +11,9 @@ Schedule of development:
 5. Write tests for the Website
 6. Write backend of website
 
-Frontend:
-ReactJS, BootStrap, SaSS
+Technologies:
+ReactJS with TypeScript
+
 
 Created by Zixin Zhou (Cindy)
 Starting Date: 25/05/2020
