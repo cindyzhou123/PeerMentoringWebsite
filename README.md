@@ -26,6 +26,10 @@ Schedule of development:
     h. add make post button for every users
     
 3. Write the front end of the website
+
+Technologies: ReactJS with TypeScript Material-UI font from: https://github.com/fontsource/fontsource
+
+
 4. Complete UML diagram for website
 5. Write tests for the Website
 6. Write backend of website
