@@ -27,7 +27,7 @@ Schedule of development:
     
 3. Write the front end of the website
 
-Technologies: ReactJS with TypeScript Material-UI font from: https://github.com/fontsource/fontsource
+    Technologies: ReactJS with TypeScript Material-UI font from: https://github.com/fontsource/fontsource
 
 
 4. Complete UML diagram for website
